@@ -10,17 +10,25 @@ import model.entities.Seller;
 public class Program {
 
 	public static void main(String[] args) {
-		
+
 		SellerDao sellerDao = DaoFactory.createSellerDao();
-		
+
 		Seller seller = sellerDao.findById(3);
 		System.out.println(seller);
-		
-		System.out.println("\nTeste department findByDepartment \n");
+
+		System.out.println("\n================= Teste department findByDepartment =============== \n");
 		Department department = new Department(2, null);
-		
+
 		List<Seller> list = sellerDao.finByDepartment(department);
-		for(Seller s : list) {
+		for (Seller s : list) {
+			System.out.println(s);
+
+		}
+
+		System.out.println("\n=========== Teste department findAll ========== \n");
+
+		list = sellerDao.findAll();
+		for (Seller s : list) {
 			System.out.println(s);
 		}
 	}
