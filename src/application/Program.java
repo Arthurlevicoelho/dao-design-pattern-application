@@ -33,10 +33,20 @@ public class Program {
 			System.out.println(s);
 		}
 		
-		System.out.println("\n=========== Teste department findAll ========== \n");
+		System.out.println("\n=========== Teste department insert ========== \n");
 		Seller newSeller = new Seller(null, "Arthur", "Arthurlevi@gmail.com", new Date(),2000.00,department);
-		sellerDao.insert(newSeller);
-		System.out.println("Inserted! New id:"+ newSeller.getId());
+		//sellerDao.insert(newSeller);
+		//System.out.println("Inserted! New id:"+ newSeller.getId());
+		
+		
+		System.out.println("\n=========== Teste department  ========== \n");
+		
+		seller = sellerDao.findById(1);
+		seller.setName("João Pedro");
+		sellerDao.update(seller);
+		System.out.println("Update Completed!!!");
+		
+
 		}
 
 }
