@@ -24,6 +24,12 @@ public class Program2 {
 		Department department = departmentDao.findById(2);
 		System.out.println(department);
 
+		System.out.println("\n=============TESTE ALLDEPARTMENT========\n");
+		
+		department = departmentDao.findById(1);
+		department.setName("Books");
+		departmentDao.update(department);
+		System.out.println("Update Completed!!!");
 	}
 
 }
